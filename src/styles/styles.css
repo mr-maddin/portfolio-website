@@ -1,0 +1,65 @@
+/*
+FONTS
+
+New Science Light
+font-family: "new-science", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+New Science Regular
+font-family: "new-science", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+New Science Bold
+font-family: "new-science", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+New Science Mono Light
+font-family: "new-science-mono", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+New Science Mono Bold
+font-family: "new-science-mono", sans-serif;
+font-weight: 700;
+font-style: normal;
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 5rem;
+  background-color: #ededed;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.03) 0,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+}
+
+h1 {
+  font-family: "baudot", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+h2 {
+  font-family: "new-science", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-display: swap;
+}
+
+p {
+  font-family: "new-science", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-display: swap;
+}
