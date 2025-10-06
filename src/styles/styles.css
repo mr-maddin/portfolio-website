@@ -159,6 +159,7 @@ ul svg {
 
 .portfolio-heading {
   margin-bottom: 2rem;
+  font-size: calc(var(--basic-font-size) * 1.25);
 }
 
 .projects {
@@ -184,7 +185,27 @@ ul svg {
   width: 85%;
   margin: 0 auto;
   border-radius: 1rem;
-  border: 1px solid var(--honeydew);
+  object-fit: cover;
+}
+
+.tech-description {
+  font-family: "new-science-mono", monospace, sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tech-items {
+  background-color: var(--red-pantone);
+  color: var(--honeydew);
+  font-size: calc(var(--basic-font-size) * 0.8);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
 }
 
 .projects a {
@@ -295,5 +316,10 @@ ul svg {
   .project-description img {
     width: 45%;
     height: 250px;
+  }
+
+  .tech-description {
+    display: flex;
+    justify-content: start;
   }
 }
