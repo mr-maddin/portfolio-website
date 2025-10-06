@@ -1,32 +1,3 @@
-/*
-FONTS
-
-New Science Light
-font-family: "new-science", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-New Science Regular
-font-family: "new-science", sans-serif;
-font-weight: 400;
-font-style: normal;
-
-New Science Bold
-font-family: "new-science", sans-serif;
-font-weight: 700;
-font-style: normal;
-
-New Science Mono Light
-font-family: "new-science-mono", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-New Science Mono Bold
-font-family: "new-science-mono", sans-serif;
-font-weight: 700;
-font-style: normal;
-*/
-
 :root {
   box-sizing: border-box;
   margin: 0;
@@ -38,10 +9,28 @@ font-style: normal;
   --cerulean: #457b9dff;
   --berkeley-blue: #1d3557ff;
   --basic-font-size: 1rem;
+  --bg-img: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.03) 0,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  --bg-img-dark: repeating-linear-gradient(45deg, #f1faeeff, #f1faeeff 1px, transparent 1px, transparent 20px);
+  --ld-background: light-dark(var(--honeydew), var(--berkeley-blue));
+  --ld-font-clr: light-dark(var(--berkeley-blue), var(--honeydew));
+  --ld-h1: light-dark(var(--berkeley-blue), var(--red-pantone));
+  --ld-portfolio-bg: light-dark(var(--berkeley-blue), var(--honeydew));
+  --ld-portfolio-text: light-dark(var(--honeydew), var(--berkeley-blue));
+  --ld-background-img: light-dark(var(--bg-img), var(--bg-img-dark));
+}
+
+html {
+  color-scheme: light dark;
 }
 
 body {
-  background-color: var(--honeydew);
+  background-color: var(--ld-background);
   background-image: repeating-linear-gradient(
     45deg,
     rgba(0, 0, 0, 0.03) 0,
@@ -49,7 +38,7 @@ body {
     transparent 1px,
     transparent 20px
   );
-  color: var(--berkeley-blue);
+  color: var(--ld-font-clr);
   margin: 0;
 }
 
@@ -59,6 +48,7 @@ h1 {
   font-style: normal;
   font-display: swap;
   font-size: calc(var(--basic-font-size) * 2.9);
+  color: var(--ld-h1);
   margin: 0 0 3rem 0;
   line-height: 1;
 }
@@ -166,10 +156,10 @@ ul svg {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: var(--honeydew);
+  color: var(--ld-portfolio-text);
   text-align: left;
   padding: 2rem 1rem;
-  background-color: var(--berkeley-blue);
+  background-color: var(--ld-portfolio-bg);
   border-radius: 1rem;
   box-shadow: 10px 7px 6px -8px rgba(0, 0, 0, 0.4);
   margin-bottom: 3rem;
@@ -182,7 +172,7 @@ ul svg {
 }
 
 .projects img {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 1rem;
   object-fit: cover;
@@ -192,6 +182,7 @@ ul svg {
   font-family: "new-science-mono", monospace, sans-serif;
   font-weight: 300;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   list-style-type: none;
@@ -314,8 +305,7 @@ ul svg {
   }
 
   .project-description img {
-    width: 45%;
-    height: 250px;
+    width: 450px;
   }
 
   .tech-description {
@@ -323,3 +313,5 @@ ul svg {
     justify-content: start;
   }
 }
+
+/* TOGGLE DARK MODE */
