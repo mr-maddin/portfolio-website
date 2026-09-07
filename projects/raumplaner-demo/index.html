@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Raumplaner – Demo</title>
+  </head>
+  <body>
+    <div class="rp-page">
+      <div>
+        <a class="rp-back-link" href="../../index.html#portfolio">← zurück zum Portfolio</a>
+      </div>
+
+      <div>
+        <h1 class="rp-title">Raumplaner <span class="rp-card-subtitle">vers 1.1</span></h1>
+      </div>
+
+      <div>
+        <h2 class="rp-section-title">Sporträume</h2>
+        <div class="rp-grid rp-grid-sport">
+          <div class="rp-card" data-room="room1">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Turnsaal_MMS.webp" alt="Turnsaal MMS" />
+            <div class="rp-card-name">Turnsaal</div>
+            <div class="rp-card-subtitle">Mittelschule</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+          <div class="rp-card" data-room="room2">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Turnsaal_VS.webp" alt="Turnsaal VS" />
+            <div class="rp-card-name">Turnsaal 2</div>
+            <div class="rp-card-subtitle">Volksschule</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+          <div class="rp-card" data-room="room4">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Bewegungsraum.webp" alt="Bewegungsraum" />
+            <div class="rp-card-name">Bewegungsraum</div>
+            <div class="rp-card-subtitle">ehem. Kindergarten</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+          <div class="rp-card" data-room="room5">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Balletraum.webp" alt="Balletraum" />
+            <div class="rp-card-name">Balletraum</div>
+            <div class="rp-card-subtitle">1. Stock VS</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="rp-section-title">Sitzungsräume</h2>
+        <div class="rp-grid rp-grid-meeting">
+          <div class="rp-card" data-room="room3">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Sitzungssaal.webp" alt="Sitzungssaal" />
+            <div class="rp-card-name">Sitzungssaal</div>
+            <div class="rp-card-subtitle">Großer Saal, 1. Stock</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+          <div class="rp-card" data-room="room6">
+            <img class="rp-card-image" src="./public/images/Raumplaner-Sitzungszimmerjpg.webp" alt="Sitzungszimmer" />
+            <div class="rp-card-name">Sitzungszimmer</div>
+            <div class="rp-card-subtitle">Raum 1. Stock</div>
+            <div class="rp-status-row">
+              <span class="rp-dot" data-status-dot></span>
+              <span class="rp-status-label" data-status-label>Lädt…</span>
+            </div>
+            <div class="rp-next-booking" data-next-booking>Nächste Buchung: …</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./mock-dashboard.js"></script>
+  </body>
+</html>

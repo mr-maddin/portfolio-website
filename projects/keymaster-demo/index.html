@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyMaster – Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        color: #cffafe;
+        font-weight: 300;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .nav-link:hover {
+        background: #334155;
+      }
+      .nav-link.active {
+        background: #334155;
+      }
+      .card {
+        border: 1px solid #1e293b;
+        background: #0f172a;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      .action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #0891b2;
+        padding: 0.6rem 0.9rem;
+        border-radius: 0.5rem;
+        color: #cffafe;
+        font-size: 0.8rem;
+        cursor: pointer;
+        border: none;
+      }
+      .action-btn:hover {
+        background: #06b6d4;
+      }
+      .pill {
+        border: 1px solid;
+        padding: 0.2rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        white-space: nowrap;
+      }
+      .pill-green {
+        border-color: #6ee7b7;
+        color: #cffafe;
+      }
+      .pill-red {
+        border-color: rgba(253, 164, 175, 0.8);
+        color: #cffafe;
+      }
+      .pill-yellow {
+        border-color: #fbbf24;
+        color: #cffafe;
+      }
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-cyan-100 min-h-screen">
+    <div class="grid grid-cols-[220px_1fr] min-h-screen">
+      <!-- SIDEBAR -->
+      <aside class="border-r border-slate-800 p-5 flex flex-col gap-8">
+        <div>
+          <h1 class="text-2xl font-medium text-cyan-100">KeyMaster</h1>
+          <span class="mono text-[0.6rem] text-slate-500 uppercase tracking-widest">Demo · Mockdaten</span>
+        </div>
+        <nav class="flex flex-col gap-1">
+          <a class="nav-link active" data-tab="uebersicht"><i data-lucide="layout-template" width="16" height="16"></i>Übersicht</a>
+          <a class="nav-link" data-tab="schluessel"><i data-lucide="key" width="16" height="16"></i>Schlüssel</a>
+          <a class="nav-link" data-tab="personen"><i data-lucide="users" width="16" height="16"></i>Personen</a>
+          <a class="nav-link" data-tab="report"><i data-lucide="file-text" width="16" height="16"></i>Report</a>
+          <span class="nav-link opacity-40 cursor-not-allowed"><i data-lucide="shield-check" width="16" height="16"></i>Administration</span>
+        </nav>
+        <a href="../../index.html#portfolio" class="mt-auto flex items-center gap-2 text-slate-400 text-sm hover:text-cyan-100">
+          <i data-lucide="arrow-left" width="16" height="16"></i>
+          zurück zum Portfolio
+        </a>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="p-8">
+        <header class="flex flex-row justify-between items-start mb-10 flex-wrap gap-4">
+          <div>
+            <p class="text-slate-500 text-[0.8rem] mono mb-2">KeyMaster &gt; <span id="crumb">Übersicht</span></p>
+            <h2 id="pageTitle" class="text-3xl text-cyan-100">Übersicht</h2>
+            <p class="text-cyan-100 text-[0.8rem] mt-1 font-extralight">Status aller Schlüssel • Beispieldaten, keine Live-Verbindung</p>
+          </div>
+          <div class="flex gap-3">
+            <button class="action-btn"><i data-lucide="zap" width="16" height="16"></i>Kurzleihe</button>
+            <button class="action-btn"><i data-lucide="plus-circle" width="16" height="16"></i>Neuer Vorgang</button>
+          </div>
+        </header>
+
+        <!-- ÜBERSICHT -->
+        <section id="tab-uebersicht" class="tab-panel active">
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <div class="card">
+              <p class="text-[0.9rem] font-extralight">Gesamtanzahl Schlüssel</p>
+              <p class="text-2xl text-cyan-500 mt-2">42</p>
+            </div>
+            <div class="card">
+              <p class="text-[0.9rem] font-extralight">Aktuell verliehen</p>
+              <p class="text-2xl text-cyan-500 mt-2">12</p>
+            </div>
+            <div class="card">
+              <p class="text-[0.9rem] font-extralight">Reserviert</p>
+              <p class="text-2xl text-cyan-500 mt-2">3</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[1.6fr_1fr] gap-4">
+            <div class="card">
+              <div class="flex justify-between items-center mb-5">
+                <h3 class="font-medium">Aktuelle Aktivitäten</h3>
+                <button class="text-[0.7rem] text-slate-400 hover:text-cyan-100">Alle anzeigen</button>
+              </div>
+              <div class="flex flex-col gap-3" id="activitiesList"></div>
+            </div>
+            <div class="card">
+              <h3 class="font-medium mb-5">Reservierungen &amp; Erinnerungen</h3>
+              <div class="flex flex-col gap-3" id="reminderList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCHLÜSSEL -->
+        <section id="tab-schluessel" class="tab-panel">
+          <div class="card">
+            <div class="grid grid-cols-[0.6fr_1.4fr_1fr_1fr] gap-2 text-[0.7rem] text-slate-500 uppercase tracking-widest pb-3 border-b border-slate-800 mb-2">
+              <span>Nr.</span>
+              <span>Bezeichnung</span>
+              <span>Ort</span>
+              <span>Status</span>
+            </div>
+            <div id="keyList" class="flex flex-col"></div>
+          </div>
+        </section>
+
+        <!-- PERSONEN (Platzhalter) -->
+        <section id="tab-personen" class="tab-panel">
+          <div class="card text-slate-400 text-sm">In dieser Demo nicht enthalten — in der echten App verwaltet dieser Bereich Personen &amp; Institutionen inkl. Ausleihhistorie.</div>
+        </section>
+
+        <!-- REPORT (Platzhalter) -->
+        <section id="tab-report" class="tab-panel">
+          <div class="card text-slate-400 text-sm">In dieser Demo nicht enthalten — in der echten App liefert dieser Bereich einen filterbaren Verlaufsbericht aller Vorgänge.</div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./mock-data.js"></script>
+  </body>
+</html>

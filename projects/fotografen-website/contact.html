@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/xut1tmk.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="Icons/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-items">
+        <span class="material-symbols-outlined" id="nav-btn"> filter_center_focus </span>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">Info</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="logo">
+        <img class="logo-img" src="images/logo-white_MM.png" alt="Logo mit 2 M" height="55px" />
+      </div>
+    </header>
+    <div class="hero">
+      <div class="text">
+        <h2>Contact</h2>
+        <p>Schreib mir kurz, worum es geht – ich melde mich zurück.</p>
+      </div>
+      <section class="contactSection">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Dein Name" required />
+          </div>
+          <div class="form-row">
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" type="email" placeholder="deine@email.com" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" placeholder="Erzähl mir von deiner Idee..." required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Nachricht senden</button>
+          <p class="form-success" id="formSuccess">Danke! Diese Demo-Seite verschickt keine echten Nachrichten – im Original würde hier deine Anfrage ankommen.</p>
+        </form>
+      </section>
+    </div>
+    <script src="./script/skript.js"></script>
+    <script>
+      const contactForm = document.getElementById("contactForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formSuccess.classList.add("is-visible");
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
