@@ -500,42 +500,9 @@ ul svg {
   border: 1px solid var(--border-muted);
 }
 
-.placeholder-text {
-  font-style: italic;
-  opacity: 0.8;
-  color: var(--text-muted);
-  border: 1px dashed var(--border-muted);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-}
-
-.placeholder-text::before {
-  content: "PLATZHALTER — ";
-  font-weight: 700;
-  font-style: normal;
-  opacity: 0.7;
-}
-
-.project-img-placeholder {
-  width: 90%;
-  aspect-ratio: 4 / 3;
-  margin: 0 auto;
-  border-radius: 1rem;
-  border: 2px dashed var(--border-muted);
-  background-color: var(--bg-page);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  text-align: center;
-  padding: 1rem;
-}
-
-.placeholder-icon {
-  width: 48px;
-  height: 48px;
+.project-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -8px rgba(230, 57, 70, 0.5);
 }
 
 .tech-description {
