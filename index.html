@@ -1,233 +1,391 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio von Martin Weißkircher – Frontend Developer für moderne, performante Websites und Web-Apps." />
-    <title>Mein Portfolio</title>
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" href="public/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
-    <link rel="stylesheet" href="src/styles/styles.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/kvs7dwc.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/kvs7dwc.css" />
-  </head>
-  <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-      <div class="nav-inner">
-        <a href="#home" class="nav-logo">MW<span class="nav-logo-dot">.</span></a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Menü öffnen">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="nav-links">
-          <li><a href="#about">Über mich</a></li>
-          <li><a href="#portfolio">Projekte</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-        </ul>
-      </div>
-    </nav>
+    <title>Martin Weißkircher | Frontend-Entwickler</title>
+    <meta
+      name="description"
+      content="Frontend-Entwickler für Websites, Web-Apps und interne Tools. Von Hand gebaut mit HTML, CSS, JavaScript, Tailwind CSS und Vite. Verfügbar für Freelance-Projekte."
+    />
+    <meta name="theme-color" content="#171412" />
+    <meta name="color-scheme" content="dark" />
 
-    <main class="wrapper">
-      <!-- HERO SECTION-->
-      <header class="hero" id="home">
-        <div class="hero-inner">
-          <div class="hero-text">
-            <p class="eyebrow">Martin Weißkircher</p>
-            <h1>Frontend Developer</h1>
-            <p class="hero-subtitle">Ich baue moderne, schnelle und durchdachte Web-Erlebnisse – von der ersten Idee bis zum fertigen Interface.</p>
-            <div class="hero-cta">
-              <a href="#contact" class="btn btn-primary">Projekt anfragen</a>
-              <a href="#portfolio" class="btn btn-outline">Projekte ansehen</a>
+    <!-- TODO: Domain eintragen, sobald die Seite online ist (Vorschau in Messengern und sozialen Netzwerken) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Martin Weißkircher | Frontend-Entwickler" />
+    <meta property="og:description" content="Websites und Web-Apps, von Hand gebaut. Verfügbar für Freelance-Projekte." />
+    <meta property="og:image" content="https://DEINE-DOMAIN.tld/images/Profilbild.webp" />
+
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <!-- Header ============================================================ -->
+    <header class="site-header" data-header>
+      <div class="wrap nav-inner">
+        <a href="#top" class="brand" aria-label="Martin Weißkircher, zum Seitenanfang">
+          <span class="brand-mark" aria-hidden="true">MW</span>
+          <span class="brand-name hidden sm:inline">Martin Weißkircher</span>
+        </a>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen oder schließen">
+          <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" data-nav aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="#projekte" data-nav-link>Projekte</a></li>
+            <li><a href="#ueber-mich" data-nav-link>Über mich</a></li>
+            <li><a href="#kontakt" data-nav-link>Kontakt</a></li>
+          </ul>
+          <a href="#kontakt" class="btn btn-secondary btn-sm">Projekt anfragen</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inhalt">
+      <!-- Hero ============================================================ -->
+      <section class="hero" id="top" data-spy-reset aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <p class="status-pill hero-in" style="--i: 0">
+              <span class="status-dot" aria-hidden="true"></span>
+              Verfügbar für neue Projekte
+            </p>
+
+            <h1 id="hero-title" class="hero-title hero-in" style="--i: 1">Websites und Web-Apps, von Hand gebaut. Ohne Baukasten.</h1>
+
+            <p class="hero-lead hero-in" style="--i: 2">
+              Ich bin Martin Weißkircher, Frontend-Entwickler. Ich baue Websites, Web-Apps und interne Tools, die schnell laden, auf jedem
+              Gerät funktionieren und sich auch später noch gut warten lassen.
+            </p>
+
+            <div class="hero-actions hero-in" style="--i: 3">
+              <a class="btn btn-primary" href="#kontakt">Projekt anfragen</a>
+              <a class="btn btn-secondary" href="#projekte">Projekte ansehen</a>
             </div>
           </div>
-          <div class="hero-photo">
-            <img class="hero-photo-img" src="public/images/profilbild.webp" alt="Ein Portrait von Martin Weißkircher" />
+
+          <div class="hero-photo hero-in" style="--i: 2">
+            <img src="images/Profilbild.webp" width="1285" height="1149" alt="Porträt von Martin Weißkircher" fetchpriority="high" decoding="async" />
           </div>
         </div>
-        <ul class="tech-strip">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Git</li>
-          <li>GitHub</li>
-        </ul>
-      </header>
-
-      <!-- ABOUT SECTION-->
-      <article class="about" id="about" data-animate>
-        <ul class="service-list">
-          <li>
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6.5l-3 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </span>
-            <p class="service-title">Frontend-Entwicklung</p>
-          </li>
-          <li>
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" />
-                <path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-            </span>
-            <p class="service-title">Responsive Webdesign</p>
-          </li>
-          <li>
-            <span class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M11 4.5l1-1.5 1 1.5 1.7-.6.3 1.8 1.8-.3-.3 1.8 1.7.9-1 1.6 1 1.6-1.7.9.3 1.8-1.8-.3-.3 1.8-1.7-.6-1 1.5-1-1.5-1.7.6-.3-1.8-1.8.3.3-1.8-1.7-.9 1-1.6-1-1.6 1.7-.9-.3-1.8 1.8.3.3-1.8z"
-                  stroke="currentColor"
-                  stroke-width="1.3"
-                  stroke-linejoin="round"
-                />
-                <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3" />
-              </svg>
-            </span>
-            <p class="service-title">Wartung &amp; Optimierung</p>
-          </li>
-        </ul>
-        <div class="about-content">
-          <h2 class="about-heading">Über mich</h2>
-          <div class="about-text">
-            <p class="bold-text text">Hi, ich bin Martin.</p>
-            <p class="text">
-              Schon früh hat mich mein Vater mit seiner Leidenschaft für Technik angesteckt. Während andere Kinder vor allem mit Spielen beschäftigt waren, habe ich fasziniert zugeschaut, wenn er Computer reparierte, Kabel verlegte oder neue Geräte
-              ausprobierte. Diese Neugier hat mich nie losgelassen.
-            </p>
-            <p class="text">
-              Irgendwann hielt ich dann meinen ersten Raspberry Pi in den Händen – und plötzlich öffnete sich eine völlig neue Welt. Zum ersten Mal konnte ich selbst Dinge zum Laufen bringen, kleine Programme schreiben, Hardware steuern und Ideen
-              Wirklichkeit werden lassen. Aus Neugier wurde Begeisterung, aus Begeisterung der Wunsch, tiefer einzutauchen.
-            </p>
-            <p class="text">
-              Heute beschäftige ich mich intensiv mit der Entwicklung moderner Webseiten und Web-Apps. Ich arbeite mit HTML, CSS und JavaScript und vertiefe mein Wissen laufend, aktuell besonders in React und den Möglichkeiten, ansprechende
-              Benutzeroberflächen mit sauberem Code zu verbinden.
-            </p>
-            <p class="text">Technik ist für mich nicht nur Arbeit oder Hobby – sie ist der rote Faden, der sich durch mein Leben zieht und mich immer wieder antreibt, Neues zu lernen und kreative Lösungen zu finden.</p>
-          </div>
-          
-      </article>
-      <section>
-        <ul class="social-icons">
-          <li>
-            <a href="https://github.com/mr-maddin" target="_blank">
-              <?xml version="1.0"?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
-              <svg class="social" version="1.0" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path
-                  d="M16.003,0C7.17,0,0.008,7.162,0.008,15.997  c0,7.067,4.582,13.063,10.94,15.179c0.8,0.146,1.052-0.328,1.052-0.752c0-0.38,0.008-1.442,0-2.777  c-4.449,0.967-5.371-2.107-5.371-2.107c-0.727-1.848-1.775-2.34-1.775-2.34c-1.452-0.992,0.109-0.973,0.109-0.973  c1.605,0.113,2.451,1.649,2.451,1.649c1.427,2.443,3.743,1.737,4.654,1.329c0.146-1.034,0.56-1.739,1.017-2.139  c-3.552-0.404-7.286-1.776-7.286-7.906c0-1.747,0.623-3.174,1.646-4.292C7.28,10.464,6.73,8.837,7.602,6.634  c0,0,1.343-0.43,4.398,1.641c1.276-0.355,2.645-0.532,4.005-0.538c1.359,0.006,2.727,0.183,4.005,0.538  c3.055-2.07,4.396-1.641,4.396-1.641c0.872,2.203,0.323,3.83,0.159,4.234c1.023,1.118,1.644,2.545,1.644,4.292  c0,6.146-3.74,7.498-7.304,7.893C19.479,23.548,20,24.508,20,26c0,2,0,3.902,0,4.428c0,0.428,0.258,0.901,1.07,0.746  C27.422,29.055,32,23.062,32,15.997C32,7.162,24.838,0,16.003,0z"
-                /></svg
-            ></a>
-          </li>
-          <li>
-            <a href="mailto:martin.weisskircher@gmail.com"
-              ><?xml version="1.0"?><svg class="social" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path
-                  d="M20,3H4C1.8,3,0,4.8,0,7v10c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V7C24,4.8,22.2,3,20,3z M21.6,8.8l-7.9,5.3   c-0.5,0.3-1.1,0.5-1.7,0.5s-1.2-0.2-1.7-0.5L2.4,8.8C2,8.5,1.9,7.9,2.2,7.4C2.5,7,3.1,6.9,3.6,7.2l7.9,5.3c0.3,0.2,0.8,0.2,1.1,0   l7.9-5.3c0.5-0.3,1.1-0.2,1.4,0.3C22.1,7.9,22,8.5,21.6,8.8z"
-                /></svg
-            ></a>
-          </li>
-        </ul>
       </section>
 
-      <!-- PORTFOLIO SECTION-->
-      <section class="portfolio-section" id="portfolio">
-        <h2 class="portfolio-heading">Portfolio</h2>
-
-        <article class="projects project-1" data-animate>
-          <h3>Fotografen-Portfolio-Website</h3>
-          <div class="project-description">
-            <p class="text">
-              Mehrseitiger Portfolio-Auftritt für eine Portrait-Fotografin – mit Galerie, About-Seite inklusive Equipment-Übersicht und einem
-              Kontaktformular, umgesetzt in reinem HTML, CSS und JavaScript.
+      <!-- Projekte ======================================================== -->
+      <section class="section" id="projekte" aria-labelledby="projekte-title">
+        <div class="wrap">
+          <header class="section-head">
+            <h2 id="projekte-title">Projekte</h2>
+            <p class="section-lead">
+              Drei Arbeiten aus der Praxis: ein internes Tool für eine Gemeindeverwaltung, eine Desktop-App für die Raumplanung und eine
+              Website für eine Fotografin.
             </p>
-            <img src="public/images/screenshot_fotografenWebsite.webp" alt="Screenshot der Fotografen-Portfolio-Website" />
-          </div>
-          <ul class="tech-description">
-            <li class="tech-items">HTML</li>
-            <li class="tech-items">CSS</li>
-            <li class="tech-items">JavaScript</li>
-          </ul>
-          <a href="projects/fotografen-website/index.html" target="_blank" rel="noopener" class="project-btn">zum Projekt</a>
-        </article>
+          </header>
 
-        <article class="projects project-2" data-animate>
-          <h3>Raumplaner-App (Electron)</h3>
-          <div class="project-description">
-            <p class="text">
-              Desktop-App zur Raumverwaltung einer Schule – mit Wochenkalender, Konflikterkennung bei Doppelbuchungen und lokaler
-              SQLite-Datenbank, gebaut mit Electron und Tailwind CSS.
-            </p>
-            <img class="white-img" src="public/images/screenshot_RaumPlaner.webp" alt="Screenshot der Raumplaner-App" />
-          </div>
-          <ul class="tech-description">
-            <li class="tech-items">HTML</li>
-            <li class="tech-items">Tailwind</li>
-            <li class="tech-items">JavaScript</li>
-            <li class="tech-items">Electron</li>
-          </ul>
-          <a href="projects/raumplaner-demo/index.html" target="_blank" rel="noopener" class="project-btn">zum Projekt</a>
-        </article>
+          <div class="project-list">
+            <!-- KeyMaster -->
+            <article class="project" data-reveal>
+              <a class="project-frame" href="projects/keymaster-demo/index.html" target="_blank" rel="noopener" aria-label="Demo von KeyMaster öffnen (neuer Tab)">
+                <img src="images/keyMaster.webp" width="1326" height="885" alt="Übersichtsseite von KeyMaster mit Kennzahlen, aktuellen Ausleihen und Reservierungen" loading="lazy" decoding="async" />
+              </a>
+              <div class="project-body">
+                <p class="project-kind">Web-App für den internen Einsatz</p>
+                <h3 class="project-title">KeyMaster</h3>
+                <p class="project-tagline">Schlüsselverwaltung für eine kommunale Verwaltung</p>
+                <p class="project-text">
+                  Wer hat gerade welchen Schlüssel? KeyMaster beantwortet diese Frage für eine Gemeindeverwaltung auf einen Blick. Die App
+                  führt Schlüssel und Schlüsselbünde, Personen und Ausleihen, protokolliert jede Bewegung und bietet eine Kurzleihe für den
+                  schnellen Vorgang am Schalter.
+                </p>
+                <dl class="spec">
+                  <div>
+                    <dt>Kontext</dt>
+                    <dd>Gemeindeverwaltung, täglicher Einsatz am Schalter</dd>
+                  </div>
+                  <div>
+                    <dt>Stack</dt>
+                    <dd>Vanilla JS, Vite, Tailwind CSS</dd>
+                  </div>
+                  <div>
+                    <dt>Umfang</dt>
+                    <dd>Ausleihe und Rückgabe mit Protokoll, Kurzleihe, Personen- und Schlüsselverwaltung, Admin-Bereich mit automatischem Logout</dd>
+                  </div>
+                </dl>
+                <div class="project-links">
+                  <a class="btn btn-secondary btn-sm" href="projects/keymaster-demo/index.html" target="_blank" rel="noopener">
+                    Demo öffnen<span class="sr-only"> (neuer Tab)</span>
+                  </a>
+                  <span class="project-note">Demo mit Beispieldaten, ohne Live-Verbindung</span>
+                </div>
+              </div>
+            </article>
 
-        <article class="projects project-3" data-animate>
-          <h3>KeyMaster</h3>
-          <div class="project-description">
-            <p class="text">
-              Schlüsselverwaltungs-App für eine kommunale Verwaltung – mit Übersicht über Ausleihen und Rückgaben, einer Kurzleihe-Funktion
-              und Personen-/Schlüsselverwaltung, entwickelt mit Vanilla JS, Vite und Tailwind CSS.
-            </p>
-            <!-- TODO: Screenshot einfügen, sobald verfügbar: Datei in public/images/ ablegen und diesen Platzhalter durch <img> ersetzen -->
-              <img class="white-img" src="public/images/keyMaster.webp" alt="Screenshot der keyMaster App" />
+            <!-- Raumplaner -->
+            <article class="project" data-reveal>
+              <a class="project-frame" href="projects/raumplaner-demo/index.html" target="_blank" rel="noopener" aria-label="Demo des Raumplaners öffnen (neuer Tab)">
+                <img src="images/screenshot_RaumPlaner.webp" width="1326" height="884" alt="Dashboard des Raumplaners mit Sport- und Sitzungsräumen, Belegungsstatus und nächster Buchung" loading="lazy" decoding="async" />
+              </a>
+              <div class="project-body">
+                <p class="project-kind">Desktop-App mit Electron</p>
+                <h3 class="project-title">Raumplaner</h3>
+                <p class="project-tagline">Raumbelegung für Schule und Vereine, ohne Doppelbuchungen</p>
+                <p class="project-text">
+                  Turnsaal, Sitzungssaal, Bewegungsraum: Wenn sich Schule, Vereine und Gemeinde dieselben Räume teilen, braucht es einen
+                  Plan, dem alle vertrauen. Der Raumplaner zeigt im Wochenkalender, wer wann welchen Raum nutzt, meldet Doppelbuchungen
+                  sofort und speichert alles lokal in einer SQLite-Datenbank. Er läuft als eigenständige Desktop-App, ganz ohne Server.
+                </p>
+                <dl class="spec">
+                  <div>
+                    <dt>Kontext</dt>
+                    <dd>Schule mit gemeinsam genutzten Sport- und Sitzungsräumen</dd>
+                  </div>
+                  <div>
+                    <dt>Stack</dt>
+                    <dd>Electron, JavaScript, Tailwind CSS, SQLite</dd>
+                  </div>
+                  <div>
+                    <dt>Umfang</dt>
+                    <dd>Wochenkalender pro Raum, Konflikterkennung bei Doppelbuchungen, lokale Datenhaltung, Übersicht über Belegung und nächste Buchung</dd>
+                  </div>
+                </dl>
+                <div class="project-links">
+                  <a class="btn btn-secondary btn-sm" href="projects/raumplaner-demo/index.html" target="_blank" rel="noopener">
+                    Demo öffnen<span class="sr-only"> (neuer Tab)</span>
+                  </a>
+                  <span class="project-note">Dashboard-Vorschau im Browser</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Fotografen-Website -->
+            <article class="project" data-reveal>
+              <a class="project-frame" href="projects/fotografen-website/index.html" target="_blank" rel="noopener" aria-label="Fotografen-Website öffnen (neuer Tab)">
+                <img src="images/screenshot_fotografenWebsite.webp" width="450" height="300" alt="Startseite der Fotografen-Website mit großflächigem Portrait und dem Titel Monumental Moments" loading="lazy" decoding="async" />
+              </a>
+              <div class="project-body">
+                <p class="project-kind">Mehrseitige Website</p>
+                <h3 class="project-title">Fotografen-Portfolio</h3>
+                <p class="project-tagline">Website für eine Portrait-Fotografin</p>
+                <p class="project-text">
+                  Eine Portrait-Fotografin brauchte einen Auftritt, der ihre Bilder wirken lässt. Die Website stellt die Galerie in den
+                  Mittelpunkt, erzählt auf der About-Seite von Person und Equipment und führt über ein Kontaktformular direkt zur Anfrage.
+                  Umgesetzt in reinem HTML, CSS und JavaScript, ohne Framework und ohne Baukasten.
+                </p>
+                <dl class="spec">
+                  <div>
+                    <dt>Kontext</dt>
+                    <dd>Portrait-Fotografie, Kundenanfragen über die Website</dd>
+                  </div>
+                  <div>
+                    <dt>Stack</dt>
+                    <dd>HTML, CSS, JavaScript</dd>
+                  </div>
+                  <div>
+                    <dt>Umfang</dt>
+                    <dd>Startseite, Galerie, About-Seite mit Equipment-Übersicht, Kontaktformular</dd>
+                  </div>
+                </dl>
+                <div class="project-links">
+                  <a class="btn btn-secondary btn-sm" href="projects/fotografen-website/index.html" target="_blank" rel="noopener">
+                    Website ansehen<span class="sr-only"> (neuer Tab)</span>
+                  </a>
+                </div>
+              </div>
+            </article>
           </div>
-          <ul class="tech-description">
-            <li class="tech-items">Vanilla JS</li>
-            <li class="tech-items">Vite</li>
-            <li class="tech-items">Tailwind CSS</li>
-          </ul>
-          <a href="projects/keymaster-demo/index.html" target="_blank" rel="noopener" class="project-btn">zum Projekt</a>
-        </article>
+        </div>
+      </section>
+
+      <!-- Über mich ======================================================= -->
+      <section class="section section-band" id="ueber-mich" aria-labelledby="ueber-mich-title">
+        <div class="wrap about-grid">
+          <div class="about-copy">
+            <h2 id="ueber-mich-title" class="section-title">Über mich</h2>
+            <p class="about-intro">Hallo, ich bin Martin.</p>
+            <div class="prose">
+              <p>
+                Technik war bei uns zu Hause immer Thema. Mein Vater hat Computer repariert, Kabel verlegt und Geräte auseinandergenommen,
+                und ich habe zugeschaut, bis ich selbst Hand anlegen durfte. Mit dem ersten Raspberry Pi wurde aus Zuschauen Machen: kleine
+                Programme, gesteuerte Hardware, erste eigene Ideen, die tatsächlich liefen.
+              </p>
+              <p>
+                Heute baue ich Websites und Web-Apps. Ich arbeite mit HTML, CSS und JavaScript, mit Tailwind CSS und Vite, und wenn ein
+                Projekt auf den Desktop soll, mit Electron. Ich mag Code, den man in einem Jahr noch lesen kann, und Oberflächen, die
+                niemandem im Weg stehen.
+              </p>
+              <p>
+                Gerade vertiefe ich mich in React. Neues zu lernen ist für mich kein Zusatz, sondern der Grund, warum ich das hier mache.
+              </p>
+            </div>
+          </div>
+
+          <aside class="about-side" aria-label="Stack und Arbeitsweise">
+            <div class="stack-block">
+              <h3>Womit ich arbeite</h3>
+              <dl class="spec">
+                <div>
+                  <dt>Täglich</dt>
+                  <dd>HTML, CSS, JavaScript, Tailwind CSS, Vite, Git und GitHub</dd>
+                </div>
+                <div>
+                  <dt>In Projekten</dt>
+                  <dd>Electron, SQLite, Node.js</dd>
+                </div>
+                <div>
+                  <dt>Gerade dabei</dt>
+                  <dd>React</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="principles">
+              <h3>So arbeite ich</h3>
+              <ul>
+                <li>
+                  <strong>Ohne Baukasten.</strong>
+                  Jeder Auftritt entsteht von Hand: schlanker Code, keine Plugin-Abhängigkeiten, volle Kontrolle über Design und
+                  Ladezeit.
+                </li>
+                <li>
+                  <strong>Mobil zuerst.</strong>
+                  Jedes Layout beginnt auf dem kleinen Bildschirm und wächst von dort. Responsiv ist der Ausgangspunkt, keine
+                  Nachbesserung.
+                </li>
+                <li>
+                  <strong>Wartbar gedacht.</strong>
+                  Klare Struktur, nachvollziehbare Namen, dokumentierte Entscheidungen. Damit auch später noch jemand weiterarbeiten
+                  kann.
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Kontakt ========================================================= -->
+      <section class="section" id="kontakt" aria-labelledby="kontakt-title">
+        <div class="wrap contact-grid">
+          <div class="contact-copy">
+            <h2 id="kontakt-title" class="section-title">Kontakt</h2>
+            <p class="status-pill mt-5">
+              <span class="status-dot" aria-hidden="true"></span>
+              Verfügbar für Freelance-Aufträge
+            </p>
+            <p class="contact-lead">
+              Ich habe aktuell Kapazität für neue Projekte. Website, Web-App oder internes Tool: Beschreiben Sie kurz, worum es geht, und
+              ich melde mich persönlich zurück.
+            </p>
+
+            <ul class="contact-links">
+              <li>
+                <a href="mailto:martin.weisskircher@gmail.com">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z" />
+                    <path d="m4 7 8 6 8-6" />
+                  </svg>
+                  <span class="label">E-Mail</span>
+                  <span class="value">martin.weisskircher@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/mr-maddin" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                  <span class="label">GitHub</span>
+                  <span class="value">github.com/mr-maddin<span class="sr-only"> (neuer Tab)</span></span>
+                </a>
+              </li>
+              <li>
+                <!-- TODO: eigenen Fiverr-Benutzernamen in die URL eintragen -->
+                <a href="https://www.fiverr.com/DEIN_FIVERR_NAME" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="7" width="18" height="13" rx="2" />
+                    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" />
+                  </svg>
+                  <span class="label">Fiverr</span>
+                  <span class="value">Profil auf Fiverr<span class="sr-only"> (neuer Tab)</span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--
+            Kontaktformular
+            TODO: Endpoint eintragen. Beispiel Formspree: https://formspree.io/f/DEINE_FORM_ID
+            Solange der Platzhalter steht, öffnet das Formular das E-Mail-Programm mit der Nachricht.
+          -->
+          <form class="contact-form" data-contact-form data-reveal action="https://formspree.io/f/DEINE_FORM_ID" method="POST" aria-labelledby="form-title">
+            <h3 id="form-title" class="text-lg">Nachricht schreiben</h3>
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="topic">Worum geht es?</label>
+              <select id="topic" name="topic">
+                <option value="Website">Website</option>
+                <option value="Web-App oder internes Tool">Web-App oder internes Tool</option>
+                <option value="Wartung und Optimierung">Wartung und Optimierung</option>
+                <option value="Etwas anderes">Etwas anderes</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <!-- Honeypot gegen Spam-Bots -->
+            <div class="field-hp" aria-hidden="true">
+              <label for="firma">Firma</label>
+              <input id="firma" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <p class="form-note">
+              Ihre Angaben werden nur zur Beantwortung der Anfrage verwendet.
+              <a class="link" href="rechtliches.html#datenschutz">Datenschutz</a>
+            </p>
+
+            <div class="form-footer">
+              <button class="btn btn-primary" type="submit" data-submit>Nachricht senden</button>
+              <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER-->
-
-    <footer class="footer-section" id="contact">
-      <div class="tech-stack">
-        <h4 class="footer-heading">Tech-Stack</h4>
-        <ul>
-          <li>Tailwind CSS | React</li>
-          <li>Node.js | React Native | GIT</li>
-        </ul>
-      </div>
-      <div class="kontakt">
-        <h4 class="footer-heading">Kontakt</h4>
-        <ul class="social-icons">
-          <li>
-            <a href="https://github.com/mr-maddin" target="_blank">
-              <?xml version="1.0"?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
-              <svg class="social" version="1.0" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path
-                  d="M16.003,0C7.17,0,0.008,7.162,0.008,15.997  c0,7.067,4.582,13.063,10.94,15.179c0.8,0.146,1.052-0.328,1.052-0.752c0-0.38,0.008-1.442,0-2.777  c-4.449,0.967-5.371-2.107-5.371-2.107c-0.727-1.848-1.775-2.34-1.775-2.34c-1.452-0.992,0.109-0.973,0.109-0.973  c1.605,0.113,2.451,1.649,2.451,1.649c1.427,2.443,3.743,1.737,4.654,1.329c0.146-1.034,0.56-1.739,1.017-2.139  c-3.552-0.404-7.286-1.776-7.286-7.906c0-1.747,0.623-3.174,1.646-4.292C7.28,10.464,6.73,8.837,7.602,6.634  c0,0,1.343-0.43,4.398,1.641c1.276-0.355,2.645-0.532,4.005-0.538c1.359,0.006,2.727,0.183,4.005,0.538  c3.055-2.07,4.396-1.641,4.396-1.641c0.872,2.203,0.323,3.83,0.159,4.234c1.023,1.118,1.644,2.545,1.644,4.292  c0,6.146-3.74,7.498-7.304,7.893C19.479,23.548,20,24.508,20,26c0,2,0,3.902,0,4.428c0,0.428,0.258,0.901,1.07,0.746  C27.422,29.055,32,23.062,32,15.997C32,7.162,24.838,0,16.003,0z"
-                /></svg
-            ></a>
-          </li>
-          <li>
-            <a href="mailto:martin.weisskircher@gmail.com"
-              ><?xml version="1.0"?><svg class="social" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <path
-                  d="M20,3H4C1.8,3,0,4.8,0,7v10c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V7C24,4.8,22.2,3,20,3z M21.6,8.8l-7.9,5.3   c-0.5,0.3-1.1,0.5-1.7,0.5s-1.2-0.2-1.7-0.5L2.4,8.8C2,8.5,1.9,7.9,2.2,7.4C2.5,7,3.1,6.9,3.6,7.2l7.9,5.3c0.3,0.2,0.8,0.2,1.1,0   l7.9-5.3c0.5-0.3,1.1-0.2,1.4,0.3C22.1,7.9,22,8.5,21.6,8.8z"
-                /></svg
-            ></a>
-          </li>
+    <!-- Footer ============================================================ -->
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>&copy; <span data-year>2026</span> Martin Weißkircher</p>
+        <p>Handgebaut mit Vite, Tailwind CSS und Vanilla JS. Keine Cookies, keine Tracker.</p>
+        <ul class="footer-links">
+          <li><a href="https://github.com/mr-maddin/portfolio-website" target="_blank" rel="noopener">Quellcode</a></li>
+          <li><a href="rechtliches.html#impressum">Impressum</a></li>
+          <li><a href="rechtliches.html#datenschutz">Datenschutz</a></li>
         </ul>
       </div>
     </footer>
-    <script src="./src/main.js"></script>
   </body>
 </html>
